@@ -16,9 +16,9 @@ def prob_27(states_current: ["h","s"],
     """
 
     # sense checking
-    if states_current not in  ["h","s"]: return print("Warning: incorrect state.")
-    if states_next not in  ["h","s"]: return print("Warning: incorrect state.")
-    if actions not in ["r","p"]: return print("Warning: incorrect action.")
+    if states_current not in  ["h","s"]: raise ValueError("Warning: incorrect state.")
+    if states_next not in  ["h","s"]: raise ValueError("Warning: incorrect state.")
+    if actions not in ["r","p"]: raise ValueError("Warning: incorrect action.")
 
     # determining transition probability
     trans_prob_dict = {"hhr": 0.95,
@@ -52,8 +52,9 @@ def reward_27(states: ["h","s"],
     """
 
     # sense checking
-    if states not in  ["h","s"]: return print("Warning: incorrect state.")
-    if actions not in ["r","p"]: return print("Warning: incorrect action.")
+    if states not in  ["h","s"]: raise ValueError("Warning: incorrect state.")
+    if states_next not in  ["h","s"]: raise ValueError("Warning: incorrect state.")
+    if actions not in ["r","p"]: raise ValueError("Warning: incorrect action.")
 
     # determining reward
     reward_dict = {"hr": 7,
