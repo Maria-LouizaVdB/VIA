@@ -11,9 +11,9 @@ Both of these examples have a python file with the required transition dynamics 
 ## Value iteration algorithm - how was it implemented?
 
 ```markdown
-#### Algorithm: Value Iteration
+# Algorithm: Value Iteration
 
-**Input:** 
+## Input:
 * states S, 
 * actions A, 
 * transition function P(s'|s,a), 
@@ -21,17 +21,19 @@ Both of these examples have a python file with the required transition dynamics 
 * discount gamma, 
 * threshold epsilon, 
 * maximum iteration max_k
-**Output:** 
+
+## Output:
 * value function V(s), 
 * policy pi(s),
 * number of iterations k
 
+## Pseudocode
 1. Initialize V_0(s) = 0 for all s in S
 2. k = 0
 2. Repeat until delta < epsilon or k > max_k 
-   1. Increase k by 1, k = k+1
-   1. delta = 0
-   3. For each state s in S:
+   a. Increase k by 1, k = k+1
+   b. delta = 0
+   c. For each state s in S:
       - V_k(s) = max_a sum_{s'} P(s'|s,a) * (R(s,a,s') + gamma * V_{k-1}(s'))
       - delta = max(delta, |V_k(s) - V_{k-1}(s)|)
 3. Initialise pi(s) = 0 for all s in S
