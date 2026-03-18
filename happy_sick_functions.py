@@ -7,7 +7,8 @@ def prob_27(states_current: ["h","s"],
     https://artint.info/2e/html2e/ArtInt2e.Ch9.S5.html
 
     input: 
-        states - [initial state, final state] with both either h (healthy) or s (sick)
+        states_current - initial state, h (healthy) or s (sick)
+        states_next - next state, h (healthy) or s (sick)
         action - r (relax) or p (party)
 
     output:
@@ -42,7 +43,8 @@ def reward_27(states: ["h","s"],
     https://artint.info/2e/html2e/ArtInt2e.Ch9.S5.html
 
     input: 
-        states - h (healthy) or s (sick)
+        states - initial state, h (healthy) or s (sick)
+        states_next - next state, h (healthy) or s (sick), this is not used when calculating results but the input is needed for the via function
         action - r (relax) or p (party)
 
     output:
