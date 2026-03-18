@@ -42,12 +42,15 @@ def value_iteration_function(states: List[Any],
                             trans_fun(s,s_next,a) * gamma * v[s_next] for s_next in states) for a in actions)
             
             delta = max( delta, abs(v[s] - v_old) )
+            
         # check stabalised
         if delta < epsilon:
             break
+            
         # escape infinite loop
         if k > max_iteration: 
-            return print("Warning: did not converge within", max_iteration, "iteration steps.")
+            print("Warning: did not converge within", max_iteration, "iteration steps!")
+            break
         
     # determine policy
     pi = {s: 0.0 for s in states}
@@ -57,4 +60,4 @@ def value_iteration_function(states: List[Any],
                                           trans_fun(s,s_next,a) * gamma * v[s_next] for s_next in states) for a in actions ] )]
         # numpy.argmax takes list input!
     
-    return v, pi, k
+    return v, pi, k-1
