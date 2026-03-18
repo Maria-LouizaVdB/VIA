@@ -50,3 +50,9 @@ This algorithm was based on the pseudocode in Chapter 9.5.2 of Artifical Integll
 As a result of this change, we also return the number of iterations and print a warning when the value functions did not converge. 
 
 This package's function also assumes that the value function should be initiallised at $0$ for all states. However, this may not necessarily be the case for Poole and Mackworth's algorithm. 
+
+### Transition and reward functions
+
+The transition and reward functions are coded to accept $3$ arguments: the current state, the next state and the action. They should return a singular value that is either a probability (float) or reward (numeric). 
+
+When coding the value iteration function, the arguments for transition and rewards are encoded as functions rather than a dictionary. This is so that it can be more versitile than a look up table. If it is beneficial to consider these functions as dictionaries, these can be included inside a function (as was done in both examples for this case). 
