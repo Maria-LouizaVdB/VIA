@@ -1,2 +1,3 @@
 from via_function import value_iteration_function
-from 
+from happy_sick_example/happy_sick_functions import prob_27, reward_27
+from grid_world_example/grid_world_functions import prob_grid_world, reward_grid_world
