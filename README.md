@@ -1,4 +1,4 @@
-# VIA
+# Value Iteration Algorithm (VIA)
 
 Many decisions can be reframed into a **Markov Decision Process**, where there is a set of states, a set of actions, probabilities of moving between states when performing an action, and a set of rewards from making actions. A common way of determining the best set of actions that maximise the rewards, known as the *optimal policy*, is using *value iteration*. 
 

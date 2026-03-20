@@ -1,6 +1,6 @@
 ### Original functions
-from ..via_function import value_iteration_function
-from ..happy_sick_example.happy_sick_functions import prob_27, reward_27
+from ...value_iteration.via_function import value_iteration_function
+from ...value_iteration.example_functions.happy_sick_functions import prob_27, reward_27
 
 ### unit testing
 import pytest
