@@ -8,6 +8,10 @@ This package implements a simple value iteration algorithm with the `value_itera
 
 Both of these examples have a python file with the required transition dynamics and reward functions, and an additional jupyter notebook with more details on the problem set up and how to implement value iteration using these functions. These are known as `happy_sick_functions.py` and `happy_sick_example.ipynb`, and `grid_world_functions.py` and `grid_world_example.ipynb` respectively.
 
+## Installation
+
+This package, known as *value_iteration*, is installed from the GitHub repository using: `python -m pip install 'git+https://github.com/Maria-LouizaVdB/VIA' `. It is uninstalled with `python -m pip uninstall value_iteration`.
+
 ## Value iteration algorithm - how was it implemented?
 
 ```markdown
