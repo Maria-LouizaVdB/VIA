@@ -6,7 +6,7 @@ This package implements a simple value iteration algorithm with the `value_itera
 * Sam who is trying to decide whether to party or rest when he is healthy and sick,
 * somone who is trying to leave a 2x2 grid in a Grid World game.
 
-Both of these examples have a python file with the required transition dynamics and reward functions, and an additional jupyter notebook with more details on the problem set up and how to implement value iteration using these functions. These are known as `happy_sick_functions.py` and `happy_sick_example.ipynb`, and `grid_world_functions.py` and `grid_world_example.ipynb` respectively.
+Both of these examples have a python file with the required transition dynamics and reward functions, and an additional jupyter notebook with more details on the problem set up and how to implement value iteration using these functions. These files are called `happy_sick_example.ipynb` and`grid_world_example.ipynb` respectively. The example specific functions are callable from the package but can also be found in the `example_functions` file, and called `happy_sick_functions.py` and  `grid_world_functions.py` respectively. 
 
 ## Installation
 
