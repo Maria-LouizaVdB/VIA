@@ -27,6 +27,13 @@ def value_iteration_function(states: List[Any],
         v - value function
         k - number of iteration steps before convergence
     """
+
+    # sanity check inputs
+    if len(states) == 0: raise ValueError("Warning: no states inputted.")
+    if len(actions) == 0: raise ValueError("Warning: no actions inputted.")
+    if epsilon < 0: raise ValueError("Warning: epsilon is negative.")
+    if gamma < 0 or gamma > 1: raise ValueError("Warning: gamma is outside of [0,1].")
+    if max_iteration <= 0: raise ValueError("Warning: max_iteration is not positive.")
     
     # calculate value function values until stabalises
     v = {s: 0.0 for s in states}

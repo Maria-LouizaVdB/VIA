@@ -1,6 +1,8 @@
-def prob_27(states_current: ["h","s"], 
-            states_next: ["h","s"], 
-            actions: ["r","p"] ) -> float:
+from typing import Literal
+
+def prob_27(states_current: Literal["h","s"], 
+            states_next: Literal["h","s"], 
+            actions: Literal["r","p"] ) -> float:
 
     """
     transition probabilities of exercise 9.27 from Artificial Intelligence: Foundations of Computational Agents
@@ -34,9 +36,9 @@ def prob_27(states_current: ["h","s"],
 
     return trans_prob_dict[dict_look_up]
 
-def reward_27(states: ["h","s"],
-              states_next: ["h","s"],
-              actions: ["r","p"] ) -> float:
+def reward_27(states: Literal["h","s"],
+              states_next: Literal["h","s"],
+              actions: Literal["r","p"] ) -> float:
 
     """
     reward outcome of exercise 9.27 from Artificial Intelligence: Foundations of Computational Agents

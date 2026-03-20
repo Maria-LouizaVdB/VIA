@@ -60,3 +60,7 @@ This package's function also assumes that the value function should be initialli
 The transition and reward functions are coded to accept $3$ arguments: the current state, the next state and the action. They should return a singular value that is either a probability (float) or reward (numeric). 
 
 When coding the value iteration function, the arguments for transition and rewards are encoded as functions rather than a dictionary. This is so that it can be more versitile than a look up table. If it is beneficial to consider these functions as dictionaries, these can be included inside a function (as was done in both examples for this case). 
+
+## Unit testing
+
+The party or rest when happy or sick forms a unit test. The `tests/test_27_functions.py` file confirms whether the dynamic and reward functions function as expected; the `tests/test_27_via.py` file confirms the value iteration function has the correct values. 

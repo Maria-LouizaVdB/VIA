@@ -19,9 +19,9 @@ def prob_grid_world(states_current: ["tl","tr","bl","br"],
     actions_set = ["r","l","u","d"]
     
     # sense checking
-    if states_current not in states_set: return print("Warning: incorrect state.")
-    if states_next not in  states_set: return print("Warning: incorrect state.")
-    if actions not in actions_set: return print("Warning: incorrect action.")
+    if states_current not in states_set: raise ValueError("Warning: incorrect state.")
+    if states_next not in  states_set: raise ValueError("Warning: incorrect state.")
+    if actions not in actions_set: raise ValueError("Warning: incorrect action.")
 
     # determining transition probability
     trans_prob_dict = {f"{s}_{s_n}_{a}": 0.0 for s in states_set for s_n in states_set for a in actions_set} # every possible transition has value 0
@@ -71,9 +71,9 @@ def reward_grid_world(states_current: ["tl","tr","bl","br"],
     actions_set = ["r","l","u","d"]
     
     # sense checking
-    if states_current not in states_set: return print("Warning: incorrect state.")
-    if states_next not in  states_set: return print("Warning: incorrect state.")
-    if actions not in actions_set: return print("Warning: incorrect action.")
+    if states_current not in states_set: raise ValueError("Warning: incorrect state.")
+    if states_next not in  states_set: raise ValueError("Warning: incorrect state.")
+    if actions not in actions_set: raise ValueError("Warning: incorrect action.")
 
     # determining reward probability
     reward_dict = {f"{s}_{s_n}_{a}": 0.0 for s in states_set for s_n in states_set for a in actions_set} # every possible transition has value 0
