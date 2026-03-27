@@ -5,6 +5,22 @@ from value_iteration import value_iteration_function, prob_27, reward_27
 import pytest
 from pytest import approx
 
+@pytest.mark.parametrize("epsilon, max_iteration, expected", [
+    (0.05, 1, ({'h': 10, 's': 2}, {'h': 'p', 's': 'r'}, 1)),
+    (0.05, 2, ({'h': 16.84, 's': 5.4}, {'h': 'p', 's': 'r'}, 2)),
+    (0.05, 3, ({'h': 22.0672, 's': 10.008}, {'h': 'p', 's': 'r'}, 3)),
+])
+def test_via_27(epsilon, max_iteration, expected):
+    v, pi, k = value_iteration_function(
+        states=["h","s"], actions=["p","r"],
+        trans_fun=prob_27, reward_fun=reward_27,
+        epsilon=epsilon, gamma=0.9, max_iteration=max_iteration
+    )
+    assert v["h"] == approx(expected[0]["h"], rel=1e-3)
+    assert v["s"] == approx(expected[0]["s"], rel=1e-3)
+    assert pi == expected[1]
+    assert k == expected[2]
+
 ### testing value_iteration_function when using prob_27 and reward_27 for various epsilon and max_iteration
 
 @pytest.mark.parametrize("epsilon, max_iteration, expected", [
