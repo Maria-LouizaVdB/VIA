@@ -8,7 +8,7 @@ def value_iteration_function(states: List[Any],
                              epsilon: float = 0.05,
                              gamma: float = 0.95,
                              max_iteration: int = 100
-                            ) -> tuple[dict, dict, int, Any]:
+                            ) -> tuple[dict, dict, int]:
 
     """ 
     Perform value interation
