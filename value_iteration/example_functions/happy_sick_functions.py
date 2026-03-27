@@ -24,12 +24,12 @@ def prob_27(states_current: Literal["h","s"],
 
     # determining transition probability
     trans_prob_dict = {"hhr": 0.95,
+                       "hsr": 0.05,
                        "hhp": 0.7,
                        "hsp": 0.3,
-                       "hsr": 0.05,
+                       "shp": 0.1,
                        "ssp": 0.9,
                        "ssr": 0.5,
-                       "shp": 0.1,
                        "shr": 0.5}
 
     dict_look_up = states_current + states_next + actions

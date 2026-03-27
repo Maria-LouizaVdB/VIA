@@ -8,7 +8,7 @@ def value_iteration_function(states: List[Any],
                              epsilon: float = 0.05,
                              gamma: float = 0.95,
                              max_iteration: int = 100
-                            ) -> tuple[dict, dict, int]:
+                            ) -> tuple[dict, dict, int, Any]:
 
     """ 
     Perform value interation
@@ -43,10 +43,11 @@ def value_iteration_function(states: List[Any],
         k += 1
         delta = 0
         # calculate value function for each state
+        v_copy = v.copy()
         for s in states:
             v_old = v[s]
-            v[s] = max( sum(trans_fun(s,s_next,a) * reward_fun(s, s_next, a) + 
-                            trans_fun(s,s_next,a) * gamma * v[s_next] for s_next in states) for a in actions)
+            v[s] = max( sum(trans_fun(s,s_next,a) * (reward_fun(s, s_next, a) + 
+                                                     gamma * v_copy[s_next]) for s_next in states) for a in actions)
             
             delta = max( delta, abs(v[s] - v_old) )
             
@@ -55,7 +56,7 @@ def value_iteration_function(states: List[Any],
             break
             
         # escape infinite loop
-        if k > max_iteration: 
+        if k >= max_iteration: 
             print("Warning: did not converge within", max_iteration, "iteration steps!")
             break
         
@@ -63,8 +64,7 @@ def value_iteration_function(states: List[Any],
     pi = {s: 0.0 for s in states}
     
     for s in states:
-        pi[s] = actions[numpy.argmax( [ sum(trans_fun(s,s_next,a) * reward_fun(s,s_next, a) + 
-                                          trans_fun(s,s_next,a) * gamma * v[s_next] for s_next in states) for a in actions ] )]
+        pi[s] = actions[numpy.argmax( [ sum(trans_fun(s,s_next,a) * (reward_fun(s,s_next, a) + gamma * v[s_next]) for s_next in states) for a in actions ] )]
         # numpy.argmax takes list input!
     
-    return v, pi, k-1
+    return v, pi, k
