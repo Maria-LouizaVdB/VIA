@@ -12,6 +12,8 @@ Both of these examples have a python file with the required transition dynamics 
 
 This package, known as *value_iteration*, is installed from the GitHub repository using: `python -m pip install 'git+https://github.com/Maria-LouizaVdB/VIA' `. It is uninstalled with `python -m pip uninstall value_iteration`.
 
+To check this has installed correctly, please run `pytest` and check the $31$ tests pass.
+
 ## Value iteration algorithm - how was it implemented?
 
 ```markdown
