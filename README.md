@@ -34,7 +34,7 @@ This package, known as *value_iteration*, is installed from the GitHub repositor
 ## Pseudocode
 1. Initialize V_0(s) = 0 for all s in S
 2. k = 0
-2. Repeat until delta < epsilon or k > max_k 
+2. Repeat until delta < epsilon or k >= max_k 
    a. Increase k by 1, k = k+1
    b. delta = 0
    c. For each state s in S:
